@@ -111,3 +111,8 @@ async def ocr_image(
         mm = yy = None
 
     return CardInfo(cardNumber=card_number, cvc=cvc, expireMM=mm, expireYY=yy)
+
+
+@app.get("/healthcheck/")
+async def healthcheck():
+    return {"status": "ok"}
